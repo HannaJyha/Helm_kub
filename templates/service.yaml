@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "app-kub.fullname" . }}
+  name: app-kub
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.port }}
+      targetPort: 80
   selector:
-    app: {{ include "app-kub.name" . }}
+    app: app-kub

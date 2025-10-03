@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.io/youruser/App_Kub
+  repository: docker.io/hanna22222/App_Kub
   tag: "dev-v0"
   pullPolicy: IfNotPresent
 
