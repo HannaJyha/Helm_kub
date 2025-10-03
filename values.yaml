@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/youruser/App_Kub
+  tag: "dev-v0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  host: example.com
+  tlsSecretName: app-kub-tls

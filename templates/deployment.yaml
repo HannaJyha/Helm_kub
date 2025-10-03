@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app-kub.fullname" . }}
+  labels:
+    app: {{ include "app-kub.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "app-kub.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "app-kub.name" . }}
+    spec:
+      containers:
+        - name: {{ include "app-kub.name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+      imagePullSecrets:
+        # если образ приватный, добавьте сюда секреты
+        # - name: my-registry-secret
