@@ -1,15 +1,12 @@
 replicaCount: 1
-
 image:
   repository: docker.io/hanna22222/app_kub
-  tag: "dev-v0"
+  tag: "dev-v10"
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 80
-
 ingress:
-  enabled: true 
-  host: app-kub.example.com 
+  enabled: true
+  host: app-kub.example.com
   tlsSecretName: app-kub-tls
