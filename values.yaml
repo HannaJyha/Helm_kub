@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: docker.io/hanna22222/app_kub
-  tag: "dev-v10"
+  tag: "dev-v11"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
